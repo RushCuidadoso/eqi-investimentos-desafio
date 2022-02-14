@@ -23,30 +23,76 @@ h2{
     width: 50%;
     justify-content: space-between;
     min-width: 500px;
-    max-width: 500px;
+    max-width: 700px;
 }
 
 .container{
-    margin-top: 20px;
     display: flex;
-    flex: 40%;
+    flex: auto;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .descricao{
     display: flex;
     justify-content: space-between;
-    
 }
 
 .pill{
     display: flex;
     padding: 10px;
-    text-align: center;
-    justify-content: space-between;
-    border: 1px solid black;
+    cursor: pointer;
+}
 
+img{
+    vertical-align: middle;
+}
+
+.bruto{
+    padding: 15px;
+    border: 1px solid black;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.liquido{
+    padding: 15px;
+    border: 1px solid black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.pre{
+    padding: 15px;
+    border: 1px solid black;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.pos{
+    padding: 15px;
+    border: 1px solid black;
+    width: 100%;
+    text-align: center;
+
+}
+
+.fixado{
+    padding: 15px;
+    border: 1px solid black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.active{
+    background-color: orange;
 }
 
 button{
@@ -57,4 +103,15 @@ button{
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
+    width: auto;
+}
+
+input{
+    margin-top: 10px;
+    padding: 18px 0;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-bottom: 1px solid black;
+    height: 20px;
 }

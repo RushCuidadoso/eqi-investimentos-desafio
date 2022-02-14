@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Calculadora de Investimentos</title>
+    
 </head>
 
 <body>
@@ -21,65 +22,82 @@
         <div class="container">
             <div class="descricao">
                 <p>Rendimento</p>
-                <img src="" alt="Ajuda" srcset="" />
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xMiAwYzYuNjIzIDAgMTIgNS4zNzcgMTIgMTJzLTUuMzc3IDEyLTEyIDEyLTEyLTUuMzc3LTEyLTEyIDUuMzc3LTEyIDEyLTEyem0wIDFjNi4wNzEgMCAxMSA0LjkyOSAxMSAxMXMtNC45MjkgMTEtMTEgMTEtMTEtNC45MjktMTEtMTEgNC45MjktMTEgMTEtMTF6bS41IDE3aC0xdi05aDF2OXptLS41LTEyYy40NjYgMCAuODQ1LjM3OC44NDUuODQ1IDAgLjQ2Ni0uMzc5Ljg0NC0uODQ1Ljg0NC0uNDY2IDAtLjg0NS0uMzc4LS44NDUtLjg0NCAwLS40NjcuMzc5LS44NDUuODQ1LS44NDV6Ii8+PC9zdmc+"
+                    alt="Ajuda" srcset="" />
             </div>
             <div class="pill">
-                <div class="bruto">Bruto</div>
-                <div class="liquido">Líquido</div>
+                <div class="bruto active">
+                    <span>Bruto</span>
+                </div>
+                <div class="liquido">
+                    <span>Líquido</span>
+                </div>
             </div>
         </div>
 
         <div class="container">
             <div class="descricao">
                 <p>Tipos de indexação</p>
-                <img src="" alt="Ajuda" srcset="">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xMiAwYzYuNjIzIDAgMTIgNS4zNzcgMTIgMTJzLTUuMzc3IDEyLTEyIDEyLTEyLTUuMzc3LTEyLTEyIDUuMzc3LTEyIDEyLTEyem0wIDFjNi4wNzEgMCAxMSA0LjkyOSAxMSAxMXMtNC45MjkgMTEtMTEgMTEtMTEtNC45MjktMTEtMTEgNC45MjktMTEgMTEtMTF6bS41IDE3aC0xdi05aDF2OXptLS41LTEyYy40NjYgMCAuODQ1LjM3OC44NDUuODQ1IDAgLjQ2Ni0uMzc5Ljg0NC0uODQ1Ljg0NC0uNDY2IDAtLjg0NS0uMzc4LS44NDUtLjg0NCAwLS40NjcuMzc5LS44NDUuODQ1LS44NDV6Ii8+PC9zdmc+"
+                    alt="Ajuda" srcset="">
+
             </div>
             <div class="pill">
-                <div>PRÉ</div>
-                <div>PÓS</div>
-                <div>FIXADO</div>
+                <div class="pre">
+                    <span>PRÉ</span>
+                </div>
+                <div class="pos active">
+                    <span>PÓS</span>
+                </div>
+                <div class="fixado">
+                    <span>FIXADO</span>
+                </div>
             </div>
         </div>
 
         <div class="container">
             <p>Aporte Inicial</p>
-            <input type="number" name="" id="" data-type="currency">
+            <input type="text" name="inicial" id="" data-type="currency">
         </div>
 
         <div class="container">
             <p>Aporte Mensal</p>
-            <input type="number" name="" id="" data-type="currency">
+            <input type="text" name="mensal" id="" data-type="currency">
         </div>
 
         <div class="container">
             <p>Prazo (em meses)</p>
-            <input type="number" name="" id="">
+            <input type="number" name="prazo" id="">
         </div>
 
         <div class="container">
             <p>Rentabilidade</p>
-            <input type="number" name="" id="">
+            <input type="text" name="rentabilidade" id="">
         </div>
 
         <div class="container">
             <p>IPCA (ao ano)</p>
-            <input type="number" name="" id="">
+            <input type="text" name="ipca" id="">
         </div>
 
         <div class="container">
             <p>CDI (ao ano)</p>
-            <input type="number" name="" id="">
+            <input type="text" name="cdi" id="">
         </div>
 
         <div class="container">
-            <button>Limpar Campos</button>
+            <button class="limpar">Limpar Campos</button>
         </div>
 
         <div class="container">
-            <button>Simular</button>
+            <button class="simular">Simular</button>
         </div>
 
     </div>
+
+    <script src="script.js"></script>
+
 </body>
+
 
 </html>
