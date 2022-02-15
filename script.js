@@ -1,38 +1,91 @@
+const bruto = document.getElementsByClassName("bruto")
+const liquido = document.getElementsByClassName("liquido")
+const pre = document.getElementsByClassName("pre")
+const pos = document.getElementsByClassName("pos")
+const fixado = document.getElementsByClassName("fixado")
+
+// rendimento bruto = 1
+// rendimento liquido = 2
+var rendimento = 0;
+
+// index pre = 1
+// index pos = 2
+// index fixado = 3
+var index = 0;
+
 simular = document.getElementsByClassName("simular")
-simular[0].addEventListener('click', ()=>{
-    fetch("http://localhost:3000/simulacoes")
-    .then(response => response.json())
-    .then(response => console.log(response))
+simular[0].addEventListener('click', () => {
+    // verificador de condições
+    textoRendimento = ""
+    textoIndex = ""
+    if (rendimento == 1) {
+        textoRendimento = "tipoRendimento=bruto"
+    } else if (rendimento == 2) {
+        textoRendimento = "tipoRendimento=liquido"
+    }
+
+    if (index == 1){
+        textoIndex = "tipoIndexacao=pre"
+    } else if (index == 2){
+        textoIndex = "tipoIndexacao=pos"
+    } else if (index == 3){
+        textoIndex = "tipoIndexacao=fixado"
+    }
+
+    // fetch("http://localhost:3000/simulacoes/?tipoRendimento=:busca&tipoIndexacao=:busca")
+    fetch(`http://localhost:3000/simulacoes/?${textoRendimento}&${textoIndex}` )
+        .then(response => {
+            if (response.ok) {
+                return response
+            }
+        })
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(error => console.log('Erro na chamada dos dados.'))
 })
 
 limpar = document.getElementsByClassName("limpar")
-limpar[0].addEventListener('click', ()=>{
+limpar[0].addEventListener('click', () => {
     texto = document.querySelectorAll("input[type=text]")
     for (let i = 0; i < texto.length; i++) {
-        texto[i].value = ""; 
+        texto[i].value = "";
     }
     numero = document.querySelectorAll("input[type=number]")
     for (let i = 0; i < numero.length; i++) {
-        numero[i].value = ""; 
+        numero[i].value = "";
     }
 })
 
-bruto = document.getElementsByClassName("bruto")
-liquido = document.getElementsByClassName("liquido")
-pre = document.getElementsByClassName("pre")
-pos = document.getElementsByClassName("pos")
-fixado = document.getElementsByClassName("fixado")
 
-bruto[0].addEventListener('click', ()=>{
+
+bruto[0].addEventListener('click', () => {
     bruto[0].classList.add("active")
     liquido[0].classList.remove("active")
+    rendimento = 1
 })
-liquido[0].addEventListener('click', ()=>{
+liquido[0].addEventListener('click', () => {
     bruto[0].classList.remove("active")
     liquido[0].classList.add("active")
+    rendimento = 2
 })
 
-pre[0].addEventListener('click', ()=>{
+pre[0].addEventListener('click', () => {
     pre[0].classList.add("active")
-    liquido[0].classList.add("active")
+    pos[0].classList.remove("active")
+    fixado[0].classList.remove("active")
+    index = 1
+})
+
+pos[0].addEventListener('click', () => {
+    pre[0].classList.remove("active")
+    pos[0].classList.add("active")
+    fixado[0].classList.remove("active")
+    index = 2
+})
+
+fixado[0].addEventListener('click', () => {
+    pre[0].classList.remove("active")
+    pos[0].classList.remove("active")
+    fixado[0].classList.add("active")
+    index = 3
 })
