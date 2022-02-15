@@ -22,6 +22,8 @@ simular[0].addEventListener('click', () => {
         textoRendimento = "tipoRendimento=bruto"
     } else if (rendimento == 2) {
         textoRendimento = "tipoRendimento=liquido"
+    } else {
+        // TODO parar a execução
     }
 
     if (index == 1){
@@ -29,7 +31,9 @@ simular[0].addEventListener('click', () => {
     } else if (index == 2){
         textoIndex = "tipoIndexacao=pos"
     } else if (index == 3){
-        textoIndex = "tipoIndexacao=fixado"
+        textoIndex = "tipoIndexacao=ipca"
+    } else {
+        // TODO parar a execução
     }
 
     // fetch("http://localhost:3000/simulacoes/?tipoRendimento=:busca&tipoIndexacao=:busca")
@@ -40,8 +44,16 @@ simular[0].addEventListener('click', () => {
             }
         })
         .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(error => console.log('Erro na chamada dos dados.'))
+        .then(response => {
+            document.getElementById('valor-final-bruto').textContent = response[0].valorFinalBruto
+            document.getElementById('aliquota').textContent = response[0].aliquotaIR
+            document.getElementById('valor-pago-ir').textContent = response[0].valorPagoIR
+            document.getElementById('valor-total-investido').textContent = response[0].valorTotalInvestido
+            document.getElementById('valor-final-liquido').textContent = response[0].valorFinalLiquido
+            document.getElementById('ganho-liquido').textContent = response[0].ganhoLiquido
+
+        })
+        .catch(error => console.log('Erro na chamada dos dados. ' + error))
 })
 
 limpar = document.getElementsByClassName("limpar")
