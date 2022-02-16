@@ -37,6 +37,8 @@ simular[0].addEventListener("click", () => {
         // TODO parar a execução
     }
 
+    
+
     resultado[0].classList.remove("transparente");
 
     // fetch("http://localhost:3000/simulacoes/?tipoRendimento=:busca&tipoIndexacao=:busca")
@@ -48,17 +50,12 @@ simular[0].addEventListener("click", () => {
         })
         .then((response) => response.json())
         .then((response) => {
-            document.getElementById("valor-final-bruto").textContent =
-                response[0].valorFinalBruto;
+            document.getElementById("valor-final-bruto").textContent = response[0].valorFinalBruto;
             document.getElementById("aliquota").textContent = response[0].aliquotaIR;
-            document.getElementById("valor-pago-ir").textContent =
-                response[0].valorPagoIR;
-            document.getElementById("valor-total-investido").textContent =
-                response[0].valorTotalInvestido;
-            document.getElementById("valor-final-liquido").textContent =
-                response[0].valorFinalLiquido;
-            document.getElementById("ganho-liquido").textContent =
-                response[0].ganhoLiquido;
+            document.getElementById("valor-pago-ir").textContent = response[0].valorPagoIR;
+            document.getElementById("valor-total-investido").textContent = response[0].valorTotalInvestido;
+            document.getElementById("valor-final-liquido").textContent = response[0].valorFinalLiquido;
+            document.getElementById("ganho-liquido").textContent = response[0].ganhoLiquido;
         })
         .catch((error) => alert("Erro na chamada dos dados. " + error));
 });
@@ -107,3 +104,9 @@ fixado[0].addEventListener("click", () => {
     fixado[0].classList.add("active");
     index = 3;
 });
+
+function validar(campo){
+    if(campo == 1){
+        document.getElementsByName("inicial").textContent
+    }
+}

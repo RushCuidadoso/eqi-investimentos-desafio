@@ -10,8 +10,6 @@
 
 </head>
 
-
-
 <body>
     <header>
         <h1>Simulador de Investimentos</h1>
@@ -61,32 +59,32 @@
 
             <div class="container">
                 <p>Aporte Inicial</p>
-                <input type="text" name="inicial" id="" data-type="currency">
+                <input type="text" name="inicial" onfocusout="validar(1)">
             </div>
 
             <div class="container">
                 <p>Aporte Mensal</p>
-                <input type="text" name="mensal" id="" data-type="currency">
+                <input type="text" name="mensal" onfocusout="validar(2)">
             </div>
 
             <div class="container">
                 <p>Prazo (em meses)</p>
-                <input type="number" name="prazo" id="">
+                <input type="number" name="prazo">
             </div>
 
             <div class="container">
                 <p>Rentabilidade</p>
-                <input type="text" name="rentabilidade" id="">
+                <input type="text" name="rentabilidade" onfocusout="validar(2)">
             </div>
 
             <div class="container">
                 <p>IPCA (ao ano)</p>
-                <input type="text" name="ipca" id="">
+                <input type="text" name="ipca" onfocusout="validar(2)">
             </div>
 
             <div class="container">
                 <p>CDI (ao ano)</p>
-                <input type="text" name="cdi" id="">
+                <input type="text" name="cdi" onfocusout="validar(2)">
             </div>
 
             <div class="container">
