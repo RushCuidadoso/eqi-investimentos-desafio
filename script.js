@@ -104,9 +104,3 @@ fixado[0].addEventListener("click", () => {
     fixado[0].classList.add("active");
     index = 3;
 });
-
-function validar(campo){
-    if(campo == 1){
-        document.getElementsByName("inicial").textContent
-    }
-}
